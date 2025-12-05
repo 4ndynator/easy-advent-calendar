@@ -30,7 +30,7 @@ export class AdventCalenderBody {
     this.isAddingContent.set(false);
   }
 
-  isDoorClickable(day: number){
+  isDoorClickable(day: number) {
     const today = new Date();
     const currentDay = today.getDate();
     const currentMonth = today.getMonth() + 1;
