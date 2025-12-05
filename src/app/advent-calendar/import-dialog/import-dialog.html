@@ -9,6 +9,8 @@
   @if (hasError && isSubmitted) {
     <p class="error-text">Der Inhalt kann nicht eingefügt werden.</p>
   }
-  <button (click)="onAddContent()">Eingeben</button>
-  <button (click)="onCancel()">Cancel</button>
+  <div class="button-bar">
+    <button (click)="onAddContent()">Eingeben</button>
+    <button (click)="onCancel()">Cancel</button>
+  </div>
 </dialog>

@@ -4,10 +4,10 @@ import {AdventCalendarDoor} from '../model/advent-calendar-door';
 @Component({
   selector: 'app-door-content',
   imports: [],
-  templateUrl: './door-content.html',
-  styleUrl: './door-content.scss',
+  templateUrl: './door-content-dialog.html',
+  styleUrl: './door-content-dialog.scss',
 })
-export class DoorContent {
+export class DoorContentDialog {
   content = input.required<AdventCalendarDoor>();
   close = output<void>();
 

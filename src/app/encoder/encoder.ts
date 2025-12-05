@@ -13,6 +13,10 @@ export class Encoder {
   errorMessage = signal('');
 
   onSubmit() {
+    if (this.encodedOutput()) {
+      this.encodedOutput.set('');
+      return;
+    }
     const lines = this.inputText().split('\n').filter(line => line.trim() !== '');
 
     if (lines.length < 24) {

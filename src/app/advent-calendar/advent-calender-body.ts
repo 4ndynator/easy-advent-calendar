@@ -2,14 +2,14 @@ import {Component, computed, inject, signal} from '@angular/core';
 import {ContentService} from './content-service';
 import {ImportDialog} from './import-dialog/import-dialog';
 import {AdventCalendarDoor} from './model/advent-calendar-door';
-import {DoorContent} from './door-content/door-content';
+import {DoorContentDialog} from './door-content-dialog/door-content-dialog';
 import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-advent-calender-body',
   imports: [
     ImportDialog,
-    DoorContent,
+    DoorContentDialog,
     RouterLink
   ],
   templateUrl: './advent-calender-body.html',
