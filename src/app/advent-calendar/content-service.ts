@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, signal} from '@angular/core';
 import {type AdventCalendarDoor} from './model/advent-calendar-door';
 
 const STORAGE_KEY = 'advent-calendar-content'
@@ -7,19 +7,16 @@ const STORAGE_KEY = 'advent-calendar-content'
   providedIn: 'root',
 })
 export class ContentService {
-  getContent(): AdventCalendarDoor[] {
-    let storage = localStorage.getItem(STORAGE_KEY);
-    if (!storage) {
-      return []
-    }
-    return JSON.parse(storage)
-  }
+  private contentSignal = signal<AdventCalendarDoor[]>(this.loadFromStorage());
+  content = this.contentSignal.asReadonly();
 
-  getDoorContent(day: number): AdventCalendarDoor | undefined {
-    return this.getContent().find((door) => door.day === day)
+  loadFromStorage(): AdventCalendarDoor[] {
+    let storage = localStorage.getItem(STORAGE_KEY);
+    return storage ? JSON.parse(storage) : [];
   }
 
   setContent(content: AdventCalendarDoor[]) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(content))
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(content));
+    this.contentSignal.set(content);
   }
 }

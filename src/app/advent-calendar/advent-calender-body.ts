@@ -17,7 +17,7 @@ import {RouterLink} from '@angular/router';
 })
 export class AdventCalenderBody {
   contentService = inject(ContentService);
-  adventCalendarContent = computed(() => this.contentService.getContent());
+  adventCalendarContent = computed(() => this.contentService.content());
 
   isAddingContent = signal(false);
   openedDoor: AdventCalendarDoor | undefined = undefined;
