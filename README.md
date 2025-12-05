@@ -9,7 +9,7 @@ The content of the single doors can be anything. Think of something like:
 
 # How it works
 The idea was to make this work without a server. LocalStorage is utilized for the cards. Therefore, don't clean the storage of the browser, or add the content every time again.
-You can create the Advent Calendar content under the `/create` path. There, simply enter the text for the 24 doors **chronologically**.
+You can create the Advent Calendar content under the `/create` path. There, simply enter the text for the 24 doors **chronologically** and line by line.
 The content is then encoded with base64 so you can easily share it without revealing the final door.
 The shared content then needs to be inserted by the other person.
 Each day another door opens and hopefully another person gets to smile.
