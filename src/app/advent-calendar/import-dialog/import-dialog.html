@@ -1,0 +1,9 @@
+<dialog open>
+  <label for="text">Content</label>
+  <textarea id="text" name="text" [(ngModel)]="inputText" rows="10"></textarea>
+  @if (hasError && isSubmitted) {
+    <p class="error-text">Bitte gib genau 24 Zeilen ein, um für jeden Tag ein Türchen zu haben.</p>
+  }
+  <button (click)="onAddContent()">Eingeben</button>
+  <button (click)="onCancel()">Cancel</button>
+</dialog>

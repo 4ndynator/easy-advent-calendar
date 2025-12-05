@@ -1,0 +1,13 @@
+.advent-calendar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.button-bar {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+}
