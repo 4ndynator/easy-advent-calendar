@@ -1,0 +1,22 @@
+<div class="encoder-container">
+  <h2>Adventskalender Verschlüsseler</h2>
+
+  <textarea
+    [(ngModel)]="inputText"
+    placeholder="Gib 24 Texte für den Adventskalender deines liebsten ein..."
+    rows="24">
+  </textarea>
+
+  @if (errorMessage()) {
+    <div class="error">{{ errorMessage() }}</div>
+  }
+
+  <button (click)="onSubmit()">Encode</button>
+
+  @if (encodedOutput()) {
+    <div class="output">
+      <h3>Encoded Output:</h3>
+      <textarea readonly [value]="encodedOutput()" rows="10"></textarea>
+    </div>
+  }
+</div>

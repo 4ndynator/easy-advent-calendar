@@ -7,11 +7,14 @@
   }
 <div class="button-bar">
   <button (click)="onAddContent()">Inhalt hinzufügen</button>
+  <button routerLink="/create">Inhalt erstellen</button>
 </div>
   @if (adventCalendarContent() || adventCalendarContent().length > 0) {
     <div class="advent-calendar">
       @for (day of adventCalendarContent(); track day.day) {
-        <app-door [day]="day.day" (click)="openedDoor=day"/>
+        <button class="dayCell" [disabled]="!isDoorClickable(day.day)" (click)="openedDoor=day">
+          {{ day.day }}
+        </button>
       }
     </div>
   }

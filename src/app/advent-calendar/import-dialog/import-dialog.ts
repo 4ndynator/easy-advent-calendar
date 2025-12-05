@@ -26,7 +26,8 @@ export class ImportDialog {
   onAddContent() {
     this.isSubmitted = true;
     if (this.inputText()) {
-      const parsedContent = parseLinesToContent(this.inputText());
+      const decodedContent = atob(this.inputText())
+      const parsedContent = parseLinesToContent(decodedContent);
       if (parsedContent.length < 24) {
         this.hasError = true;
         return;
@@ -34,6 +35,7 @@ export class ImportDialog {
       shuffleArray(parsedContent);
       this.contentService.setContent(parsedContent);
       this.hasError = false;
+      this.cancel.emit();
     }
   }
 }

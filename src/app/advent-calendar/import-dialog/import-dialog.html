@@ -1,8 +1,13 @@
 <dialog open>
-  <label for="text">Content</label>
-  <textarea id="text" name="text" [(ngModel)]="inputText" rows="10"></textarea>
+  <label for="text">Verschlüsselter Adventskalender</label>
+  <textarea id="text"
+            name="text" [(ngModel)]="inputText"
+            rows="10"
+            placeholder="Gib hier deinen verschlüsselten Inhalt ein...">
+
+  </textarea>
   @if (hasError && isSubmitted) {
-    <p class="error-text">Bitte gib genau 24 Zeilen ein, um für jeden Tag ein Türchen zu haben.</p>
+    <p class="error-text">Der Inhalt kann nicht eingefügt werden.</p>
   }
   <button (click)="onAddContent()">Eingeben</button>
   <button (click)="onCancel()">Cancel</button>

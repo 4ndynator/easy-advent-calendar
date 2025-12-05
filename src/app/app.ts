@@ -1,10 +1,10 @@
 import {Component} from '@angular/core';
 import {Header} from './header/header';
-import {AdventCalenderBody} from './advent-calendar/advent-calender-body';
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Header, AdventCalenderBody],
+  imports: [Header, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
